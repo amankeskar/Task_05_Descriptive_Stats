@@ -1,0 +1,46 @@
+--- Feature Engineering ---
+Sample of new features:
+                player team position  age age_group  sprint_speed_(ft_/_sec)  speed_percentile  team_speed_rank
+0        Locastro, Tim  ARI       CF   28     25-29                     30.7        100.000000              3.0
+1         Quinn, Roman  PHI       CF   27     25-29                     30.5         99.779736              1.0
+2          Engel, Adam  CWS       RF   29     25-29                     30.3         99.559471              5.0
+3         Turner, Trea  WSH       SS   27     25-29                     30.1         99.339207             24.0
+4        Buxton, Byron  MIN       CF   27     25-29                     30.0         99.118943             22.0
+5     Hampson, Garrett  COL       2B   26     25-29                     29.6         98.788546              7.0
+6       O'Neill, Tyler  STL       LF   25     25-29                     29.6         98.788546             10.0
+7      Bader, Harrison  STL       CF   26     25-29                     29.5         98.458150             10.0
+8        Hilliard, Sam  COL       LF   26     25-29                     29.4         97.907489              7.0
+9  Tatis Jr., Fernando   SD       SS   21     20-24                     29.4         97.907489              6.0
+
+--- T-test: Infield vs Outfield Sprint Speed ---
+t-statistic: -7.122, p-value: 0.0000
+Mean Infield: 26.76, Mean Outfield: 27.68
+
+--- ANOVA: Sprint Speed by Position ---
+F-statistic: 39.710, p-value: 0.0000
+
+--- Regression: Sprint Speed vs Age ---
+slope: -0.173, intercept: 31.738, r^2: 0.197, p-value: 0.0000
+
+--- Outlier Detection (Sprint Speed) ---
+Number of outliers (>3 std): 1
+             player team position  sprint_speed_(ft_/_sec)
+453  Pujols, Albert  LAA       1B                     22.0
+
+--- Mean Sprint Speed by Age Group ---
+age_group
+20-24    27.528302
+25-29    27.095798
+30-34    26.340000
+35-40    25.312121
+Name: sprint_speed_(ft_/_sec), dtype: float64
+
+--- Mean Sprint Speed by Team Speed Rank (Top 5) ---
+      sprint_speed_(ft_/_sec)  team_speed_rank
+team                                          
+PHI                 27.400000              1.0
+LAD                 27.292857              2.0
+ARI                 27.226667              3.0
+SEA                 27.137500              4.0
+CWS                 27.120000              5.0
+
